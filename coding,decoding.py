@@ -28,6 +28,7 @@ print(preklad4)
 
 
 def reverse_translation(text):
+    import random
     vowels = "aeiouAEIOU"
     consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
     encoded = ""
@@ -38,7 +39,8 @@ def reverse_translation(text):
             encoded += char*3
             counter += 1
         elif char in consonants:
-            encoded += char*2
+            encoded += char
+            encoded += random.choice(vowels)
             counter += 1
         else:
             encoded += char
